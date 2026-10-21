@@ -7,9 +7,15 @@ function filterSkillsByCategory(skills, category) {
   return skills.filter(skill => skill.category === category);
 }
 
-// Export for Jest testing
+// Calculate total session cost
+function calculateTotalCosts(hourlyRate, hours) {
+  return hourlyRate * hours;
+}
+
+// Export functions for Jest testing
 if (typeof module !== 'undefined' && module.exports) {
   module.exports = {
-    filterSkillsByCategory
+    filterSkillsByCategory,
+    calculateTotalCosts
   };
 }
