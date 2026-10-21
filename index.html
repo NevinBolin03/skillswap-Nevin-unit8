@@ -2,147 +2,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skill Swap | Learn and Share Skills</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skill Swap | Learn and Share Skills</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <!-- AI-assisted homepage structure and navigation -->
-    <header>
-        <h1>Skill Swap</h1>
-        <p>Learn Something New. Share What You Know.</p>
+  <!-- Navigation -->
+  <header>
+    <nav class="navbar">
+      <h1>Skill Swap</h1>
 
-        <nav aria-label="Main navigation">
-            <a href="#home">Home</a>
-            <a href="#skills">Browse Skills</a>
-            <a href="#offer">Offer Skills</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#skills">Browse Skills</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <main>
-        <section id="home">
-            <h2>Welcome to Skill Swap!</h2>
-            <p>
-                Skill Swap connects people who want to
-                learn new skills with people willing
-                to teach them.
-            </p>
-            <p>
-                Whether you want to learn programming,
-                photography, cooking, or fitness,
-                Skill Swap has something for everyone.
-            </p>
-            <a class="browse-button" href="#skills">
-                Browse Skills
-            </a>
-        </section>
+  <!-- Homepage -->
+  <main>
+    <section id="home" class="hero">
+      <h2>Welcome to Skill Swap</h2>
+      <p>
+        Learn something new, share your knowledge,
+        and connect with people who have skills to offer.
+      </p>
+      <a href="#skills" class="btn">Explore Skills</a>
+    </section>
 
-        <section id="skills">
-            <h2>Explore Available Skills</h2>
-            <p>
-                Browse our available skills and find
-                something new to learn!
-            </p>
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+      <h2>Browse Available Skills</h2>
+      <p>Find a skill that interests you!</p>
 
-            <!-- AI-assisted skill cards for Sprint 1 -->
-            <div class="skill-container">
+      <!-- Category Filters -->
+      <div class="skill-filters">
+        <h3>Filter by Category</h3>
 
-                <article class="skill-card">
-                    <h3>Web Development</h3>
-                    <p>
-                        Learn the basics of HTML,
-                        CSS, and JavaScript.
-                    </p>
-                    <p><strong>Instructor:</strong> Alex Johnson</p>
-                    <p><strong>Price:</strong> $25/hour</p>
-                    <button type="button" class="skill-button"
-                        data-skill="Web Development"
-                        data-details="Learn how to build websites using HTML, CSS, and JavaScript.">
-                        Learn More
-                    </button>
-                </article>
+        <div class="filter-buttons">
+          <button type="button" data-category="All">All</button>
+          <button type="button" data-category="Programming">
+            Programming
+          </button>
+          <button type="button" data-category="Music">Music</button>
+          <button type="button" data-category="Career">Career</button>
+        </div>
+      </div>
 
-                <article class="skill-card">
-                    <h3>Photography</h3>
-                    <p>
-                        Learn how to take better pictures
-                        and edit your photos.
-                    </p>
-                    <p><strong>Instructor:</strong> Sarah Miller</p>
-                    <p><strong>Price:</strong> $20/hour</p>
-                    <button type="button" class="skill-button"
-                        data-skill="Photography"
-                        data-details="Learn camera settings, lighting, composition, and photo editing.">
-                        Learn More
-                    </button>
-                </article>
+      <!-- Skill Cards -->
+      <div id="skill-list" class="skill-grid">
 
-                <article class="skill-card">
-                    <h3>Cooking Basics</h3>
-                    <p>
-                        Learn how to prepare simple,
-                        delicious meals at home.
-                    </p>
-                    <p><strong>Instructor:</strong> Michael Davis</p>
-                    <p><strong>Price:</strong> $15/hour</p>
-                    <button type="button" class="skill-button"
-                        data-skill="Cooking Basics"
-                        data-details="Learn kitchen safety, meal preparation, and basic cooking techniques.">
-                        Learn More
-                    </button>
-                </article>
+        <div class="skill-card" data-category="Programming">
+          <h3>Python Tutoring</h3>
+          <p>Category: Programming</p>
+          <p>Price: $20/hour</p>
+        </div>
 
-                <article class="skill-card">
-                    <h3>Strength Training</h3>
-                    <p>
-                        Learn proper lifting techniques
-                        and how to build strength.
-                    </p>
-                    <p><strong>Instructor:</strong> Chris Wilson</p>
-                    <p><strong>Price:</strong> $30/hour</p>
-                    <button type="button" class="skill-button"
-                        data-skill="Strength Training"
-                        data-details="Learn proper exercise form, workout planning, and strength training fundamentals.">
-                        Learn More
-                    </button>
-                </article>
+        <div class="skill-card" data-category="Music">
+          <h3>Guitar Lessons</h3>
+          <p>Category: Music</p>
+          <p>Price: $15/hour</p>
+        </div>
 
-            </div>
-        </section>
+        <div class="skill-card" data-category="Career">
+          <h3>Resume Review</h3>
+          <p>Category: Career</p>
+          <p>Price: Free</p>
+        </div>
 
-        <section id="offer">
-            <h2>Share Your Skills</h2>
-            <p>
-                Have a skill you would like to teach?
-                Skill Swap gives you the opportunity
-                to share your knowledge with others.
-            </p>
-        </section>
+        <div class="skill-card" data-category="Programming">
+          <h3>Web Development</h3>
+          <p>Category: Programming</p>
+          <p>Price: $25/hour</p>
+        </div>
 
-        <section id="about">
-            <h2>About Skill Swap</h2>
-            <p>
-                Our goal is to create a community where
-                people can learn from each other and
-                share their knowledge.
-            </p>
-        </section>
-    </main>
+      </div>
+    </section>
 
-    <footer>
-        <p>&copy; 2026 Skill Swap. All rights reserved.</p>
-    </footer>
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <h2>About Skill Swap</h2>
+      <p>
+        Skill Swap is a platform where people can share
+        their knowledge and learn from others. Whether
+        you're interested in programming, music, or career
+        development, Skill Swap helps you find the right
+        learning opportunity.
+      </p>
+    </section>
+  </main>
 
-    <!-- Accessible popup for skill information -->
-    <dialog id="skill-dialog">
-        <h2 id="dialog-title"></h2>
-        <p id="dialog-description"></p>
-        <button type="button" id="close-dialog">Close</button>
-    </dialog>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2026 Skill Swap. All rights reserved.</p>
+  </footer>
 
-    <script src="script.js"></script>
+  <!-- JavaScript -->
+  <script src="skillswap-functions.js"></script>
+  <script src="script.js"></script>
+
 </body>
 </html>

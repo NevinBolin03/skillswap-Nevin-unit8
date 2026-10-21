@@ -1,30 +1,51 @@
 
-// AI-assisted JavaScript: Interactive skill card details.
-// This feature supports Sprint 1 skill browsing.
+document.addEventListener('DOMContentLoaded', () => {
 
-// Select all Learn More buttons.
-const skillButtons = document.querySelectorAll(".skill-button");
+  // Get all skill cards
+  const skillCards = document.querySelectorAll('.skill-card');
 
-const skillDialog = document.getElementById("skill-dialog");
-const dialogTitle = document.getElementById("dialog-title");
-const dialogDescription = document.getElementById("dialog-description");
-const closeDialogButton = document.getElementById("close-dialog");
+  // Get all filter buttons
+  const filterButtons = document.querySelectorAll(
+    '.filter-buttons button'
+  );
 
-// Add a click event to each skill button.
-skillButtons.forEach(function(button) {
-    button.addEventListener("click", function() {
-        const skillName = button.dataset.skill;
-        const skillDetails = button.dataset.details;
+  // Convert skill cards into an array
+  const skills = Array.from(skillCards).map(card => ({
+    title: card.querySelector('h3').textContent,
+    category: card.dataset.category,
+    element: card
+  }));
 
-        // Display the selected skill information.
-        dialogTitle.textContent = skillName;
-        dialogDescription.textContent = skillDetails;
+  // Add click events to filter buttons
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
 
-        skillDialog.showModal();
+      const category = button.dataset.category;
+
+      // Call our tested filtering function
+      const filteredSkills = filterSkillsByCategory(
+        skills,
+        category
+      );
+
+      // Hide all cards
+      skillCards.forEach(card => {
+        card.style.display = 'none';
+      });
+
+      // Show matching cards
+      filteredSkills.forEach(skill => {
+        skill.element.style.display = '';
+      });
+
+      // Highlight selected button
+      filterButtons.forEach(btn => {
+        btn.classList.remove('active');
+      });
+
+      button.classList.add('active');
+
     });
-});
+  });
 
-// Allow users to close the skill details popup.
-closeDialogButton.addEventListener("click", function() {
-    skillDialog.close();
 });
