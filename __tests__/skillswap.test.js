@@ -29,3 +29,25 @@ describe('filterSkillsByCategory', () => {
     expect(result).toEqual([]);
   });
 });
+
+const { calculateTotalCosts } = require('../skillswap-functions');
+
+describe('calculateTotalCosts', () => {
+
+  test('calculates cost for regular hours', () => {
+    expect(calculateTotalCosts(20, 2)).toBe(40);
+  });
+
+  test('handles free sessions', () => {
+    expect(calculateTotalCosts(0, 3)).toBe(0);
+  });
+
+  test('calculates decimal hours correctly', () => {
+    expect(calculateTotalCosts(25, 1.5)).toBe(37.5);
+  });
+
+  test('handles zero hours', () => {
+    expect(calculateTotalCosts(20, 0)).toBe(0);
+  });
+
+});
