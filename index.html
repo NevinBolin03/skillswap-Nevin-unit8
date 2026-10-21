@@ -10,17 +10,21 @@
 <body>
 
   <!-- Navigation -->
-  <header>
-    <nav class="navbar">
-      <h1>Skill Swap</h1>
+  
+<!-- Navigation -->
+<header>
+  <nav class="navbar">
+    <h1>Skill Swap</h1>
 
-      <ul class="nav-links">
-        <li><a href="#home">Home</a></li>
-        <li><a href="#skills">Browse Skills</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
-    </nav>
-  </header>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#skills">Browse Skills</a></li>
+      <li><a href="#calculator">Cost Calculator</a></li>
+      <li><a href="#matcher">Find My Match</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </nav>
+</header>
 
   <!-- Homepage -->
   <main>
@@ -81,6 +85,36 @@
 
       </div>
     </section>
+
+<!-- Skill Matching Section -->
+<section id="matcher" class="matcher-section">
+  <h2>Find My Match</h2>
+  <p>Find skills that match your interests and budget.</p>
+
+  <div class="matcher-box">
+    <label for="match-category">Preferred Category</label>
+    <select id="match-category">
+      <option value="Programming">Programming</option>
+      <option value="Music">Music</option>
+      <option value="Career">Career</option>
+    </select>
+
+    <label for="max-price">Maximum Price ($/hour)</label>
+    <input
+      type="number"
+      id="max-price"
+      min="0"
+      step="0.01"
+      placeholder="Enter your maximum budget"
+    >
+
+    <button type="button" id="match-btn">
+      Find My Match
+    </button>
+
+    <div id="match-results" aria-live="polite"></div>
+  </div>
+</section>
 
     <!-- About Section -->
     <section id="about" class="about-section">
